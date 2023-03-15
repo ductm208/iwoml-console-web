@@ -29,6 +29,7 @@ jobs:
     - name: Upload Artifact GitHub Action
       uses: actions/upload-artifact@v3
       with:
+        name: github-pages
         path: build
   deploy:
     # Add a dependency to the build job
