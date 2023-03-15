@@ -9,7 +9,7 @@ import NetworkConfigurationForm from "./forms/NetworkConfigurationForm";
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<FullLanding />}>
             <Route index element={<MQTTConfigurationForm />} />
