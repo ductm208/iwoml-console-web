@@ -29,7 +29,7 @@ jobs:
     - name: Upload Artifact GitHub Action
       uses: actions/upload-artifact@v3
       with:
-        name: iwoml-console-art
+        name: iwoml-console-web-art
         path: build
   deploy:
     # Add a dependency to the build job
@@ -42,12 +42,16 @@ jobs:
 
     # Deploy to the github-pages environment
     environment:
-      name: iwoml-console-art
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: iwoml-console-web-art
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
