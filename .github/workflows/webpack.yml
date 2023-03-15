@@ -52,6 +52,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: iwoml-console-web-art
+      - name: Checking artifact contents
+        run: |
+          ls -a
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
