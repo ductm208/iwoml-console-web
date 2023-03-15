@@ -26,6 +26,7 @@ jobs:
       run: |
         npm install
         CI=false npm run build
+        gzip build/index.html -kf
     - name: Upload Artifact GitHub Action
       uses: actions/upload-pages-artifact@v1
       with:
